@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Chat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/tailwindcss.css">
+    
+</head>
+<body class="bg-gray-800 h-screen text-white p-3"></body>
+    <h1 class="font-bold text-2xl text-center mb-3">
+        <i class="material-icons">sentiment_satisfied_alt</i>
+        <span class="text-yellow-600">M</span>
+        -Chat
+    </h1>
+    <div class="border m-auto md:w-5/6 p-3 h-5/6 rounded overflow-y-auto">
+        <div class="bg-white bg-opacity-90 w-40 text-black p-2 rounded-lg clear-both float-left">Hi!
+        </div>
+
+        <div  class="bg-white bg-opacity-90 w-40 text-black p-2 rounded-lg clear-both float-right mt-3">Hello there!</div>
+    </div>
+
+    <form id='send-container' action="#" class="mt-5 flex justify-center">
+        <input id='msg' autocomplete="off" type="text" class="p-2 rounded-lg w-10/12 md:w-8/12 h-7  text-black focus:border-yellow-600">
+        <button id='send' type="submit" class="ml-2 flex items-center focus:text-yellow-600">
+            <i class="material-icons text-xl">send</i>
+        </button>
+    </form>
+    
+
+<script defer src="/socket.io/socket.io.js"></script>
+<script defer src="./js/client.js"></script>
+</body>
+</html>
