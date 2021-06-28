@@ -11,15 +11,10 @@ const port = process.env.PORT || 3000;
 //using public folder for direct access to views
 app.use(express.static(path.join(__dirname, "public")));
 
-const users = {};
+const users = [];
 
 //when new user connects
 io.on("connection", (socket) => {
-  //when a user disconnects
-  socket.on("disconnect", () => {
-    console.log("user disconnected");
-  });
-
   //joins new user
   socket.on("new-user-joined", (name) => {
     users[socket.id] = name;
@@ -29,6 +24,11 @@ io.on("connection", (socket) => {
   //sended message will come here and broadcast
   socket.on("send", (msg) => {
     socket.broadcast.emit("receive", { message: msg, name: users[socket.id] });
+  });
+
+  //when a user disconnects
+  socket.on("disconnect", (name) => {
+    socket.broadcast.emit("left", users[socket.id]);
   });
 });
 
