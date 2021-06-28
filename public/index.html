@@ -7,6 +7,7 @@
     <title>M-Chat</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/tailwindcss.css">
+    <link rel="stylesheet" href="css/modal.css">
     
 </head>
 <body class="bg-gray-800 h-screen text-white"></body>
@@ -25,7 +26,7 @@
     </div>
     </nav>
     
-    <div class="border mx-2 md:m-auto md:w-5/6 p-3 h-4/6 rounded overflow-y-auto" id="msg-container">
+    <div class="border mx-2 md:m-auto md:w-5/6 p-3 h-4/6 rounded overflow-y-auto overflow-x-hidden" id="msg-container">
         <!-- <div class="bg-white bg-opacity-90 w-40 text-black p-2 rounded-lg clear-both mt-2 float-left">Hi!
         </div>
         <div  class="bg-white bg-opacity-90 w-40 text-black p-2 rounded-lg clear-both mt-2 float-right">Hello there!</div> -->
@@ -33,15 +34,20 @@
     </div>
 
     <form id='send-container' action="#" class="mt-5 flex justify-center">
-        <input id='msg' autocomplete="off" type="text" class="bg-gray-300 p-2 rounded-full w-10/12 md:w-8/12 h-9  text-black focus:border-yellow-600">
-        <button id='send' type="submit" class="ml-2 flex items-center focus:text-yellow-600">
+        <input autocomplete="off" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-yellow-600 focus:shadow-outline w-10/12 md:w-8/12" id="msg" type="text" placeholder="Enter message">
+        <button id='send' type="submit" class="ml-2 flex items-center hover:text-yellow-600">
             <i class="material-icons">send</i>
         </button>
     </form>
     
 
+    
+    
 
-<script defer src="/socket.io/socket.io.js"></script>
-<script defer src="./js/client.js"></script>
+    
+
+    <script defer src="./js/modal.js"></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="./js/client.js"></script>
 </body>
 </html>

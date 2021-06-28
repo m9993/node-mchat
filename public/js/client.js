@@ -8,18 +8,8 @@ const audio = new Audio("./mp3/message.mp3");
 
 const append = (msg, position) => {
   const newMsg = document.createElement("div");
-  const styleClassess = [
-    "bg-white",
-    "bg-opacity-90",
-    "w-40",
-    "text-black",
-    "p-2",
-    "rounded-lg",
-    "clear-both",
-    "mt-2",
-  ];
   newMsg.className =
-    "bg-white bg-opacity-90 w-40 text-black p-2 rounded-lg clear-both mt-2";
+    "bg-white bg-opacity-90 text-black p-2 rounded-lg clear-both mt-2";
   newMsg.classList.add("float-" + position);
   newMsg.innerHTML = msg;
   msg_container.append(newMsg);

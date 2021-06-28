@@ -25,17 +25,22 @@
     </div>
     </nav>
     
-    <h1 class=" font-normal text-2xl p-1 text-center">About</h1>
+    <h1 class=" font-normal text-2xl pt-5 pb-2 text-center">About</h1>
     <hr class="mb-14 mx-5">
     <div class="m-3 flex items-center justify-around p-2">
         <img class="h-44 rounded-full py-3" src="./img/author.jpg">
         <div class="md:mr-24">
             <h4 class="text-gray-400">Developed by :</h4>
-            <h1 class="text-gray-300 text-2xl font-medium ml-2">Muntasir Alam</h1>
+            <h1 class="text-gray-300 text-2xl font-light ml-2">Muntasir Alam</h1>
             <h6 class="text-gray-500 ml-2">Software Engineer</h6>
+            <h6 class="text-gray-500 ml-2">E-Mail: <a class='hover:text-gray-400' href="mailto:muntasiralam9993@gmail.com" target="_blank">muntasiralam9993@gmail.com</a></h6>
+            <h6 class="text-gray-500 ml-2">Web: <a class='hover:text-gray-400' href="http://m9993.github.io/me" target="_blank">http://m9993.github.io/me</a></h6>
+            <h6 class="text-gray-500 text-sm ml-2">
+                &copy; Copyright <span id="year"></span> by <a class='hover:text-gray-400' href="http://m9993.github.io/me" target="_blank"> Muntasir Alam</a>
+            </h6>
         </div>
     </div>
-    <div class=" m-3 mt-10 p-3 bg-gray-700 rounded-lg">
+    <div class="m-3 mt-10 py-3 px-5 bg-gray-700 rounded-lg">
         <span>Developed with : </span>
         <ul class="px-6 list-disc">
             <li>NodeJS (express)</li>  
@@ -43,8 +48,17 @@
             <li>Tailwindcss</li>  
         </ul>
     </div>
-    
 
+
+
+
+    <!-- year -->
+    <script defer>
+        var d = new Date();
+        var year = d.getFullYear();
+        document.querySelector('#year').innerHTML=year;
+    </script>
+    <!-- year -->
 
 <script defer src="/socket.io/socket.io.js"></script>
 <script defer src="./js/client.js"></script>
