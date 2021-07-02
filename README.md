@@ -53,6 +53,7 @@ Start the server
 ## Features
 
 - Real time chat
+- Plays audio for incoming messages
 - Responsive web design (RWD)
 
   
